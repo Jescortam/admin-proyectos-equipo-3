@@ -1,0 +1,738 @@
+[
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Croque monsieur",
+      "price": 124.99,
+      "description": "Contiene jamón, queso a la plancha con bechamel, acompañada con una ensalada.",
+      "image": "../placeholder.jpg",
+      "category": "Sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Montecristo",
+      "price": 124.99,
+      "description": "Combinación perfecta de jamón y queso, al estilo french toast.",
+      "image": "../placeholder.jpg",
+      "category": "Sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Club sándwich",
+      "price": 159.99,
+      "description": "Delicioso sándwich de tres capas de nuestro pan artesanal, con lonjas de pechuga de pavo, lechuga, jamón, tocino y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Sopa del día",
+      "price": 64.99,
+      "description": "Exquisita sopa de papa y poro, acompáñala con una rebanada de nuestro pan artesanal boule.",
+      "image": "../placeholder.jpg",
+      "category": "Sopas y cremas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Crema de tomate",
+      "price": 64.99,
+      "description": "Deliciosa crema de tomate, perfecta para cualquier momento , acompáñala con uno de nuestros croutones.",
+      "image": "../placeholder.jpg",
+      "category": "Sopas y cremas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Sopa de cebolla",
+      "price": 84.99,
+      "description": "Platillo delicioso y nutritivo, beneficioso para la salud.",
+      "image": "../placeholder.jpg",
+      "category": "Sopas y cremas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Panzanella cesar",
+      "price": 139.99,
+      "description": "Rica y refrescante ensalada con alcachofas, pepino y tomate, con un toque especial de queso.",
+      "image": "../placeholder.jpg",
+      "category": "Ensaladas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Panzanella sweet apple",
+      "price": 129.99,
+      "description": "Elaborada con los mejores y refrescantes ingredientes, contiene pollo, arándanos, manzana y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Ensaladas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Panzanella griega",
+      "price": 139.99,
+      "description": "Ven y disfruta de esta ensalada con tomate, pepino y aceitunas.",
+      "image": "../placeholder.jpg",
+      "category": "Ensaladas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Ensalada verde",
+      "price": 139.99,
+      "description": "Rico y saludable, combinaciones perfectas en un mismo plato. (SUJETA A DISPONIBILIDAD)",
+      "image": "../placeholder.jpg",
+      "category": "Ensaladas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Tartine de garbanzo",
+      "price": 139.99,
+      "description": "Crujiente y colorido, hummus de garbanzo, betabel, champiñones, espárragos y huevo cocido.",
+      "image": "../placeholder.jpg",
+      "category": "Open sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Tartine de salmón",
+      "price": 184.99,
+      "description": "Delicioso open sándwich con queso crema y salmón ahumado, con germinados y rábanos encurtidos.",
+      "image": "../placeholder.jpg",
+      "category": "Open sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Tartine de aguacate",
+      "price": 139.99,
+      "description": "Contiene tocino, arugula, huevo y aguacate, ideal para cualquier ocasión.",
+      "image": "../placeholder.jpg",
+      "category": "Open sándwich"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Huevos rancheros",
+      "price": 124.99,
+      "description": "Platillo delicioso con dos huevos estrellados y tortillas, con frijoles negros y una espectacular salsa.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Huevos con chorizo",
+      "price": 124.99,
+      "description": "Elaborado con un chorizo artesanal con frijoles negros, es un platillo para disfrutar en cualquier momento",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Huevo con jamón",
+      "price": 124.99,
+      "description": "Deliciosa combinación de jamón y huevo, acompáñalos con unos ricos frijoles.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Huevos a la mexicana",
+      "price": 124.99,
+      "description": "Desayuno típico y delicioso, contiene cebolla, chiles y tomate, acompañados de frijoles negros.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Omelette de espárragos",
+      "price": 139.99,
+      "description": "Sabroso omelette relleno de espárragos salteados y queso, acompañado de un suculenta ensalada.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Omelette de champiñones y queso",
+      "price": 139.99,
+      "description": "Un desayuno muy saludable, relleno de champiñones y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Omelette de tres quesos",
+      "price": 139.99,
+      "description": "Delicia rellena de tres tipos de queso, ideal para un buen desayuno agradable y rico.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Desayuno americano",
+      "price": 99.99,
+      "description": "English muffin de la casa boule panadería con huevo, jamón y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Desayuno europeo",
+      "price": 99.99,
+      "description": "Delicioso y nutritivo desayuno con fruta, kéfir y un bísquet planchado con mantequilla y mermelada.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chilaquiles rojos",
+      "price": 124.99,
+      "description": "Elaborados a base de tortilla frita en triángulos, sumergidos en una espectacular salsa roja, acompañado con huevo , frijoles negros, crema y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chilaquiles verdes",
+      "price": 124.99,
+      "description": "Desayuno perfecto con huevo estrellado, frijoles negros, pollo, crema y queso.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "French toast",
+      "price": 124.99,
+      "description": "Pan brioche al estilo francés empapada en leche, endulzado con miel y azúcar glass, decorado con fresas y blueberries.",
+      "image": "../placeholder.jpg",
+      "category": "Desayunos"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Cold brew",
+      "price": 59.99,
+      "description": "Delicioso café extracción en frío, sabor suave con notas acarameladas.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Peach fuzz",
+      "price": 59.99,
+      "description": "Infusión de té oolong con pure de duraznos en almíbar hecho en casa",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té verde y jazmín",
+      "price": 59.99,
+      "description": "Infusión en frío de té verde y flores de jazmín, pidelo ligeramente endulzado con miel de abeja o al natural",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té oloong",
+      "price": 59.99,
+      "description": "Infusión de té variedad azul, oolong, sabor suave y delicado. Temperatura de Infusión de 85°",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Supernova",
+      "price": 59.99,
+      "description": "Limonada mineral con un toque de obscuridad",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Love potion",
+      "price": 59.99,
+      "description": "Limonada mineral con sirope natural de fresas orgánicas.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Poison",
+      "price": 59.99,
+      "description": "Limonada mimeral con infusión natural de lavanda",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Limonada plan z",
+      "price": 59.99,
+      "description": "Porque huele a limón! Limonada mineral con una pizca de sal del himalaya y esarchada con chamoy y chile en polvo.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Raspberry Dreams",
+      "price": 59.99,
+      "description": "Delicioso mockjito con limón, menta, sirope de frambuesas naturales y agua mimeral (sin alcohol)",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Mockjito de fresa",
+      "price": 59.99,
+      "description": "Mockjito con limón, menta, sirope de fresas y agua mineral. (SIN ALCOHOL)",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Zest de cítricos",
+      "price": 59.99,
+      "description": "Rodajas de cítricos con un toque de siropw de azúcar mascabado y agua mineral. Puede elegirse dulce o salado.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocolate",
+      "price": 69.99,
+      "description": "Exquisito chocolate de Tabasco, preparado con sirope elaborado en casa, con leche entera, de coco o de almendra.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Mocca",
+      "price": 69.99,
+      "description": "Cafe, chocolate y leche, delicioso y dulce.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocoberry",
+      "price": 69.99,
+      "description": "Postre líquido elaborado con leche a la elección, sirope de fresa natural y sirope de cacao organico.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Strawberry fields",
+      "price": 69.99,
+      "description": "Deliciosa bebida helada de fresas y leche a la elección",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Lavanda latte",
+      "price": 69.99,
+      "description": "Bebida helada de lavanda natural. Leche a la elección, infusión de lavanda y sirope de lavanda",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Caramel latte",
+      "price": 69.99,
+      "description": "Café con caramelo artesanal recién hecho y leche a la elección",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Golden milk",
+      "price": 69.99,
+      "description": "Deliciosa bebida sin cafeina a base de leche de tu preferencia, cúrcuma, jengibre, cardomomo y aniz",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Oogie boogie",
+      "price": 69.99,
+      "description": "Un café especiado, con nuestro sirope especial de especias aromáticas, un boost a tus sentidos. Con leche entera, de coco o de almendra.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Masala chai",
+      "price": 69.99,
+      "description": "Deliciosa bebida hecha al momento, de leche a la elección té negro, azucar mascabado, canela, cardomomo, aniz, clavo y nuez moscada.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té vietnamitas",
+      "price": 69.99,
+      "description": "Té negro infusionado en frío con un toque de leche condensada.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Milk tea",
+      "price": 69.99,
+      "description": "Dulce mezcla de té negro o té oolong con leche y azúcar mascabado",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Mazapan",
+      "price": 69.99,
+      "description": "Bebida shakeada del tradicional dulce mazapán con leche a la elección y azúcar mascabado.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Cold brew latte",
+      "price": 69.99,
+      "description": "Bebida a base de leche con café cold brew. Puedes agregar el sirope de tu preferencia para endulzar.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocomint",
+      "price": 69.99,
+      "description": "Deliciosa bebida de chocolate con menta natural, refrescante, dulce y cremosa",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chococream soda",
+      "price": 69.99,
+      "description": "Una bebida totalmente diferente, con una base de sirope de chocolate, agua mimeral y un toque de half & half",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Pink soda",
+      "price": 69.99,
+      "description": "Fresas con crema líquidas con un toque burbujeante",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Palomitas acarameladas",
+      "price": 69.99,
+      "description": "Deliciosa bebida nostálgica, base de keche a la elección, caramelo salado y palomitas",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Corazón roto",
+      "price": 59.99,
+      "description": "Limonada mineral con sirope de fresas naturales y un toque de carbón activado",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Pumpkin soda",
+      "price": 69.99,
+      "description": "Cream soda de Pumpkin spice, con sirope de calabaza y especias hecho en casa, agua mineral y half & half",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Jack",
+      "price": 69.99,
+      "description": "Mocca blanco y negro, con base de leche a la elección, chocolate blanco, café expresso y ganache de chocolate blanco con carbón activados",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Pinku calpis soda",
+      "price": 69.99,
+      "description": "Bebida clasica japonesa de yogurth con sirope de fresa natural y agua mineral",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Calpis soda",
+      "price": 69.99,
+      "description": "Clásica soda de calpis con agua mineral",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Peach calpis soda",
+      "price": 69.99,
+      "description": "Calpis con sirope de durazno recién hecho y agua mineral",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Pumpkin spice",
+      "price": 69.99,
+      "description": "Café con puré de calabaza, especias y leche a la elección",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee frías"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Café americano",
+      "price": 55.49,
+      "description": "",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Capuccino",
+      "price": 59.99,
+      "description": "",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Mocca",
+      "price": 59.99,
+      "description": "",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té vietnamita",
+      "price": 59.99,
+      "description": "Té negro infusiónado en frío con leche condensada.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té verde con jazmin",
+      "price": 54.99,
+      "description": "Té verde con flores de jazmín, te aromático y delicado. Temperatura de infusión 75°",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Té oolong",
+      "price": 54.99,
+      "description": "Té de denominación azul oolong, sabor fuerte y amaderado. Temperatura de infusión 85°",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Latte de lavanda",
+      "price": 59.99,
+      "description": "Infusión de lavanda francesa natural con leche a la elección, sabor delicado y floral. No contiene café",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Golden milk",
+      "price": 59.99,
+      "description": "Bebida super nutritiva y digestiva. Elaborada en base a leche a la elección con cúrcuma, jengibre, canela, aniz, clavo y cardomomo. No contiene café",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Oogie boogie",
+      "price": 59.99,
+      "description": "Capuchino con un twist único, leche a la elección, café expresso y sirope de azúcar mascabado con canela, aniz, clavo y cardomomo.",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Café de olla",
+      "price": 54.99,
+      "description": "Café negro endulzado y especiado",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Strawberry fields",
+      "price": 59.99,
+      "description": "Leche a la elección con sirope de fresas natural No contiene café",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocoberry",
+      "price": 59.99,
+      "description": "Delicioso postre líquido de fresas con chocolate",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Masala Chai",
+      "price": 59.99,
+      "description": "Infusión de té negro y especias aromáticas en leche a elegir",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocolate caliente",
+      "price": 59.99,
+      "description": "Chocolate caliente con leche a la elección, bombones y más chocolate",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Chocomint",
+      "price": 59.99,
+      "description": "Chocolate caliente con un twist de sabor a menta fresca",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Palomitas acarameladas",
+      "price": 59.99,
+      "description": "Bebida de leche a la elección, caramelo salado y palomitas!",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Jack",
+      "price": 59.99,
+      "description": "Mocca de chocolate blanco y ganache de carbón activado",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Pumpkin spice",
+      "price": 59.99,
+      "description": "Café con leche espumada y puré de calabaza natural con especias. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Prensa francesa",
+      "price": 69.99,
+      "description": "Prensa francesa individual (350ml)",
+      "image": "../placeholder.jpg",
+      "category": "Beetle Coffee calientes"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Xun",
+      "price": 69.99,
+      "description": "Bebida probiotica de té verde y miel de abeja. Mejora a la digestión y para subir el sistema inmunologico. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Bebidas probióticas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Soda probiotica",
+      "price": 69.99,
+      "description": "Pregunta por nuestra bebida especial de la casa, ligeramente fermentada con fruta de la estación y miel de abeja",
+      "image": "../placeholder.jpg",
+      "category": "Bebidas probióticas"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Sacher torte",
+      "price": 119.99,
+      "description": "Pastel de chocolate con harina de almendras relleno de mermelada de frutos rojos recien hecha, ganache de chocolate oscuro y cubierto de frutas de temporada.",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Concha con nieve",
+      "price": 119.99,
+      "description": "Concha artesanal rellena de helado de vainilla y frutas de temporada. Tamaño para 1 a 2 personas. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Affogato",
+      "price": 84.99,
+      "description": "Postre tradicional italiano. Una copa de nieve de vainilla y 1 shot de expresso recién hecho. Tamaño individual. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Masala affogato",
+      "price": 84.99,
+      "description": "Un twist al clásico postre affogato. Una copa de nieve de vainilla con infusión de té negro con especias aromáticas. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Carrot cup",
+      "price": 119.99,
+      "description": "Copa de pastel de zanahoria cubierto de helado de vainilla y caramelo salado. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Brownie con nieve",
+      "price": 119.99,
+      "description": "Brownie de chocolate oscuro con helado de vainilla",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Rol con helado",
+      "price": 119.99,
+      "description": "Rol de canela artesanal con arandanos y almendras relleno de helado de vainilla. Agotado",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Tarta de chocolate",
+      "price": 119.99,
+      "description": "Tarta crujiente rellena de ganache de chocolate obscuro y almendras",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Tarta frutal",
+      "price": 9.99,
+      "description": "Tarta rellena de crema pastelera y cubierto con frutas frescas de temporada",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "French Toast",
+      "price": 124.99,
+      "description": "",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    },
+    {
+      "_id": "asdfsdfsadfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadf",
+      "name": "Hot cakes",
+      "price": 124.99,
+      "description": "",
+      "image": "../placeholder.jpg",
+      "category": "Postres"
+    }
+  ]

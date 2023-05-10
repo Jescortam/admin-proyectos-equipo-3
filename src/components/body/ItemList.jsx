@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ItemCard from './ItemCard';
@@ -26,17 +26,13 @@ export default function ItemList() {
     const getProducts = () => {
         const productsCollectionRef = collection(db, "products");
         const getProducts = async () => {
-            // const data = await getDocs(query(productsCollectionRef, where("category", "==", "Postres")));
-            const data = await getDocs(query(productsCollectionRef));
+            const data = await getDocs(query(productsCollectionRef, where("category", "==", "Postres")));
+            // const data = await getDocs(query(productsCollectionRef));
             setProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         }
 
         getProducts();
     }
-
-    // useEffect(() => {
-
-    // }, []);
 
     const renderCategories = products => {
         if (products.length === 0) {

@@ -6,6 +6,7 @@ import { Navigate, BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider, AuthContext } from "./Auth";
 import ShoppingCart from './components/ShoppingCart';
+import OrderTracker from './components/body/OrderTracker';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -19,12 +20,10 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/shopping-cart"
-              element={currentUser ? (
-                <ShoppingCart />
-              ) : (
-                <Navigate to={"/login"} />
-              )
-              }
+              element={currentUser ? (<ShoppingCart />) : (<Navigate to={"/login"} />)}
+            />
+            <Route path="/orders/:orderId"
+              element={currentUser ? (<OrderTracker />) : (<Navigate to={"/login"} />)}
             />
           </Routes>
         </div>

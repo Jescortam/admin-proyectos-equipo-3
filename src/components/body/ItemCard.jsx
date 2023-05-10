@@ -1,35 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { getAuth } from 'firebase/auth';
+import { Alert, Box, Button, Card, CardContent, CardMedia, Snackbar, Typography } from '@mui/material';
 import { db, storage } from '../../firebase';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
 import AspectRatio from '@mui/joy/AspectRatio';
+import { AuthContext } from '../../Auth';
 
 export default function ItemCard(props) {
   const { id, name, description, price } = props;
-  console.log(props.image)
 
   const [image, setImage] = useState(props.image)
+  const [open, setOpen] = React.useState(false);
 
   const navigate = useNavigate()
+  const { currentUser } = useContext(AuthContext);
+
+  const handleSuccess = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const addToShoppingCart = async () => {
-    const auth = getAuth();
-    if (auth.currentUser === null) {
+    if (currentUser === null) {
       navigate("/signup")
     }
 
-    const user = auth.currentUser
+    const user = currentUser
     const userRef = doc(db, "users", user.uid)
-    await updateDoc(userRef, { shoppingCart: arrayUnion(id) })
+    const userDoc = await getDoc(userRef)
+
+    const shoppingCart = userDoc.data().shoppingCart
+    let index
+    shoppingCart.forEach((item, i) => {
+      if (item.id === id) {
+        index = i;
+        return
+      }
+    })
+
+    let quantity = 1
+    if (index !== undefined) {
+      shoppingCart[index].quantity++
+    } else {
+      shoppingCart.push({ id, name, price, quantity })
+    }
+
+    await updateDoc(userRef, { shoppingCart })
+
+    handleSuccess()
   }
 
   const getImage = async () => {
     setImage(await getDownloadURL(ref(storage, `images/${image}`)))
   }
+
+  // useEffect(() => {
+
+  // })
 
   return (
     <Card
@@ -59,6 +95,11 @@ export default function ItemCard(props) {
           <Button onClick={addToShoppingCart} variant="contained" sx={{ width: "200px" }}>Añadir al carrito</Button>
         </Box>
       </Box>
+      <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} autoHideDuration={6000} onClose={handleClose} >
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Producto agregado de manera exitosa.
+        </Alert>
+      </Snackbar >
     </Card>
   );
 }

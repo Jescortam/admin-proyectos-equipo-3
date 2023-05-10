@@ -8,21 +8,11 @@ import ItemList from './body/ItemList';
 const drawerWidth = 240;
 
 function Home() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
   return (
     <>
-      <Header handleDrawerToggle={handleDrawerToggle} />
+      <Header />
       <Box sx={{ display: 'flex' }}>
-        <Sidebar
-          drawerWidth={drawerWidth}
-          handleDrawerToggle={handleDrawerToggle}
-          mobileOpen={mobileOpen}
-        />
+        <Sidebar drawerWidth={drawerWidth} />
         <Body drawerWidth={drawerWidth} content={<ItemList />} />
       </Box>
     </>

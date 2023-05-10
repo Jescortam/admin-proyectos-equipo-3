@@ -47,8 +47,6 @@ export default function Sidebar(props) {
       <Drawer
         container={container}
         variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
         }}
@@ -64,9 +62,7 @@ export default function Sidebar(props) {
         sx={{
           display: { xs: 'none', sm: 'block' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-        }}
-        open
-      >
+        }}>
         {renderDrawer()}
       </Drawer>
     </Box>

@@ -1,17 +1,28 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from "../../Auth";
 import { getAuth, signOut } from "firebase/auth";
 
-import { AppBar, Tooltip, MenuItem, Avatar, Box, Toolbar, IconButton, Typography, Container, Menu, Button, Badge } from '@mui/material';
+import { AppBar, Tooltip, MenuItem, Avatar, Box, IconButton, Typography, Container, Menu, Button, Badge, Snackbar, Alert } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu'
 import CoffeeIcon from '@mui/icons-material/Coffee'
 import { ShoppingCart } from '@mui/icons-material';
 import { blue } from '@mui/material/colors';
+import { useNavigate } from 'react-router';
 
-function Header(props) {
+const pages = [
+  { name: 'MENU', location: '/' },
+  { name: 'ORDENES', location: '/orders' }
+]
+
+function Header() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+
+  const auth = getAuth();
+  const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -21,11 +32,52 @@ function Header(props) {
     setAnchorElUser(null);
   };
 
-  const { handleDrawerToggle } = props;
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
 
-  const auth = getAuth();
-  const { currentUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+    setOpen(true)
+  }
+
+  const handleCloseAlert = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const renderNavButtons = () => {
+    return pages.map((page) => (
+      <Button
+        key={page.name}
+        onClick={() => {
+          handleCloseNavMenu()
+          navigate(page.location)
+        }}
+        sx={{ my: 2, color: 'white', display: 'block', fontSize: '1.1rem' }}
+      >
+        {page.name}
+      </Button>
+    ))
+  }
+
+  const renderNavMenu = () => {
+    return pages.map((page) => (
+      <MenuItem key={page.name} onClick={() => {
+        handleCloseNavMenu()
+        navigate(page.location)
+      }}>
+        <Typography textAlign="center">{page.name}</Typography>
+      </MenuItem>
+    ))
+  }
 
   const renderAuthButtons = () => {
     if (currentUser) {
@@ -34,7 +86,7 @@ function Header(props) {
           <MenuItem onClick={handleCloseUserMenu}>
             <Typography
               textAlign="center"
-              onClick={() => { signOut(auth) }}>
+              onClick={handleSignOut}>
               Sign out
             </Typography>
           </MenuItem>
@@ -48,7 +100,8 @@ function Header(props) {
           <Typography
             textAlign="center"
             component="a"
-            href="/signup">
+            href="/signup"
+            sx={{ textDecoration: 'none', color: 'black' }}>
             Sign up
           </Typography>
         </MenuItem>,
@@ -56,7 +109,8 @@ function Header(props) {
           <Typography
             textAlign="center"
             component="a"
-            href="/login">
+            href="/login"
+            sx={{ textDecoration: 'none', color: 'black' }}>
             Log in
           </Typography>
         </MenuItem>
@@ -67,68 +121,87 @@ function Header(props) {
   return (
     <AppBar position="fixed" sx={{ zIndex: 1400 }}>
       <Container maxWidth="100%" sx={{ marginLeft: 0, display: "flex", height: "70px", alignItems: "center", justifyContent: "space-between" }}>
-        <Box display="flex" alignItems="center">
-          <CoffeeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'Georgia',
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Mama Poule
-          </Typography>
+        <CoffeeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'Georgia',
+            fontWeight: 700,
+            letterSpacing: '.1rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          Mama Poule
+        </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleDrawerToggle}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-          <CoffeeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
             sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'Georgia',
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              display: { xs: 'block', md: 'none' },
             }}
           >
-            Mama Poule
-          </Typography>
+            {renderNavMenu()}
+          </Menu>
+        </Box>
+        <CoffeeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+        <Typography
+          variant="h5"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            mr: 2,
+            display: { xs: 'flex', md: 'none' },
+            flexGrow: 1,
+            fontFamily: 'Georgia',
+            fontWeight: 700,
+            letterSpacing: '.1rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          Mama Poule
+        </Typography>
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {renderNavButtons()}
         </Box>
 
         <Box sx={{ flexGrow: 0 }} display="flex" justifyContent="center" alignItems="center" >
           <Box component="a" href="/shopping-cart" mr={2}>
-            <Badge badgeContent={1} color="secondary">
-              <ShoppingCart fontSize="large" sx={{ color: blue[50] }} />
-            </Badge>
+            <ShoppingCart fontSize="large" sx={{ color: blue[50] }} />
           </Box>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <Avatar alt="user icon" />
             </IconButton>
           </Tooltip>
           <Menu
@@ -151,6 +224,11 @@ function Header(props) {
           </Menu>
         </Box>
       </Container>
+      <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }} autoHideDuration={6000} onClose={handleCloseAlert} >
+        <Alert onClose={handleCloseAlert} severity="success" sx={{ width: '100%' }}>
+          Cierre de sesión exitoso.
+        </Alert>
+      </Snackbar >
     </AppBar>
   );
 }

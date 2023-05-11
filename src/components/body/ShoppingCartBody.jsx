@@ -26,16 +26,20 @@ export default function ShoppingCartBody() {
         const shoppingCart = userDoc.data().shoppingCart
         setItems(shoppingCart)
 
-        setTotal(shoppingCart.reduce(
+        let newTotal = shoppingCart.reduce(
             (total, item) => total + item.price * item.quantity,
             0
-        ))
+        ).toFixed(2)
+
+        setTotal(newTotal)
     }
 
     const createOrder = async () => {
         await setDoc(doc(db, "orders", uuidv4()), {
             userId: currentUser.uid,
-            items
+            items,
+            creationDate: new Date(),
+            isOver: false
         })
         navigate("/")
     }

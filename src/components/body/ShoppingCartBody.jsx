@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
@@ -14,25 +14,29 @@ export default function ShoppingCartBody() {
     const navigate = useNavigate()
     const { currentUser } = useContext(AuthContext);
 
-    const getItems = async () => {
-        if (currentUser === null) {
-            navigate("/signup")
+    useEffect(() => {
+        const getItems = async () => {
+            if (currentUser === null) {
+                navigate("/signup")
+            }
+
+            const user = currentUser
+            const userRef = doc(db, "users", user.uid)
+            const userDoc = await getDoc(userRef)
+
+            const shoppingCart = userDoc.data().shoppingCart
+            setItems(shoppingCart)
+
+            let newTotal = shoppingCart.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+            ).toFixed(2)
+
+            setTotal(newTotal)
         }
 
-        const user = currentUser
-        const userRef = doc(db, "users", user.uid)
-        const userDoc = await getDoc(userRef)
-
-        const shoppingCart = userDoc.data().shoppingCart
-        setItems(shoppingCart)
-
-        let newTotal = shoppingCart.reduce(
-            (total, item) => total + item.price * item.quantity,
-            0
-        ).toFixed(2)
-
-        setTotal(newTotal)
-    }
+        getItems()
+    }, [])
 
     const createOrder = async () => {
         await setDoc(doc(db, "orders", uuidv4()), {
@@ -62,7 +66,7 @@ export default function ShoppingCartBody() {
 
     return (
         <Box display="flex" flexDirection="column" sx={{ maxWidth: 800 }}>
-            <Button onClick={getItems}>GET_ITEMS</Button>
+            {/* <Button onClick={getItems}>GET_ITEMS</Button> */}
             <Typography variant="body1" mb={2}>
                 <NavLink to="/" >
                     &lt; Regresar

@@ -63,10 +63,6 @@ export default function ItemCard(props) {
     setImage(await getDownloadURL(ref(storage, `images/${image}`)))
   }
 
-  // useEffect(() => {
-
-  // })
-
   return (
     <Card
       sx={{ margin: { xs: 1.5, sm: 3 }, marginTop: 2, width: { xs: '100%', sm: '80%', md: '40%', lg: '27.5%', xl: '20%' } }}>

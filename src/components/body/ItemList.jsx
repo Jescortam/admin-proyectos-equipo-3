@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ItemCard from './ItemCard';
@@ -23,7 +23,7 @@ const categoriesKeys = [
 export default function ItemList() {
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
+    useEffect(() => {
         const productsCollectionRef = collection(db, "products");
         const getProducts = async () => {
             const data = await getDocs(query(productsCollectionRef, where("category", "==", "Postres")));
@@ -32,7 +32,7 @@ export default function ItemList() {
         }
 
         getProducts();
-    }
+    }, [])
 
     const renderCategories = products => {
         if (products.length === 0) {
@@ -72,9 +72,5 @@ export default function ItemList() {
         items.map(item => <ItemCard key={item.uid} {...item} />)
     )
 
-    return (
-        <Box>
-            <Button onClick={getProducts}>GET_PRODUCTS</Button>
-            <Box>{renderCategories(products)}</Box>
-        </Box>)
+    return (<Box>{renderCategories(products)}</Box>)
 }

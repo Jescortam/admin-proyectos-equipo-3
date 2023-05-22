@@ -6,11 +6,23 @@ import { Navigate, BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider, AuthContext } from "./Auth";
 import ShoppingCart from './components/ShoppingCart';
-import OrderTracker from './components/body/OrderTracker';
 import UserOrdersBody from './components/body/UserOrdersBody';
+import AdminOrdersBody from './components/body/AdminOrdersBody';
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, isAdmin } = useContext(AuthContext);
+
+  const handleOrdersNavigation = () => {
+    if (currentUser) {
+      if (isAdmin) {
+        return <AdminOrdersBody />
+      } else {
+        return <UserOrdersBody />
+      }
+    } else {
+      return <Navigate to="/" />
+    }
+  }
 
   return (
     <AuthProvider>
@@ -24,10 +36,7 @@ function App() {
               element={currentUser ? (<ShoppingCart />) : (<Navigate to={"/login"} />)}
             />
             <Route path="/orders"
-              element={currentUser ? (<UserOrdersBody />) : (<Navigate to={"/login"} />)}
-            />
-            <Route path="/orders/:orderId"
-              element={currentUser ? (<OrderTracker />) : (<Navigate to={"/login"} />)}
+              element={handleOrdersNavigation()}
             />
           </Routes>
         </div>

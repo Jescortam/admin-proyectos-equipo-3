@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Alert, Box, Button, Card, CardContent, CardMedia, Snackbar, Typography } from '@mui/material';
@@ -59,9 +59,14 @@ export default function ItemCard(props) {
     handleSuccess()
   }
 
-  const getImage = async () => {
-    setImage(await getDownloadURL(ref(storage, `images/${image}`)))
-  }
+  useEffect(() => {
+    const getImage = async () => {
+      setImage(await getDownloadURL(ref(storage, `images/${image}`)))
+      console.log(name)
+    }
+
+    getImage()
+  })
 
   return (
     <Card
@@ -83,11 +88,9 @@ export default function ItemCard(props) {
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ height: 100 }}>
             {description}
-            {/* {id} */}
           </Typography>
         </CardContent>
         <Box display="flex" justifyContent="end" pb={2} pr={2} height="100%">
-          <Button onClick={getImage}>GET_IMAGE</Button>
           <Button onClick={addToShoppingCart} variant="contained" sx={{ width: "200px" }}>Añadir al carrito</Button>
         </Box>
       </Box>

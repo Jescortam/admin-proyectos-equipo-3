@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import ShoppingCartItems from './ShoppingCartItems';
 import { Alert, Box, Button, Typography } from '@mui/material';
@@ -45,7 +45,12 @@ export default function ShoppingCartBody() {
             creationDate: new Date(),
             isOver: false
         })
-        navigate("/")
+
+        await updateDoc(doc(db, "users", currentUser.uid), {
+            shoppingCart: []
+        })
+
+        navigate("/orders")
     }
 
     const renderShoppingCartContents = () => {
@@ -60,13 +65,12 @@ export default function ShoppingCartBody() {
                 </Button>
             </>
         } else {
-            return <Alert severity="info">Tu carrito está vacio! Para agregar productos, haz clic en "Añadir al</Alert>
+            return <Alert severity="info">Tu carrito está vacio! Para agregar productos, haz clic en "Añadir al carrito" en el producto que desees.</Alert>
         }
     }
 
     return (
         <Box display="flex" flexDirection="column" sx={{ maxWidth: 800 }}>
-            {/* <Button onClick={getItems}>GET_ITEMS</Button> */}
             <Typography variant="body1" mb={2}>
                 <NavLink to="/" >
                     &lt; Regresar

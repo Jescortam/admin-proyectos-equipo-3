@@ -87,7 +87,7 @@ function Header() {
             <Typography
               textAlign="center"
               onClick={handleSignOut}>
-              Sign out
+              Cerrar sesión
             </Typography>
           </MenuItem>
         ]
@@ -102,7 +102,7 @@ function Header() {
             component="a"
             href="/signup"
             sx={{ textDecoration: 'none', color: 'black' }}>
-            Sign up
+            Crear cuenta
           </Typography>
         </MenuItem>,
         <MenuItem onClick={handleCloseUserMenu}>
@@ -111,7 +111,7 @@ function Header() {
             component="a"
             href="/login"
             sx={{ textDecoration: 'none', color: 'black' }}>
-            Log in
+            Iniciar sesión
           </Typography>
         </MenuItem>
       ]

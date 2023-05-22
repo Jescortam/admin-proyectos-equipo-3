@@ -5,7 +5,7 @@ import { AuthContext } from "../Auth";
 import { auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-import { Box, Button, Divider, Grid, TextField, Typography } from '@mui/material';
+import { Box, Button, Divider, Grid, Paper, TextField, Typography } from '@mui/material';
 import { doc, setDoc } from 'firebase/firestore';
 
 const Signup = () => {
@@ -22,7 +22,8 @@ const Signup = () => {
             .then(async () => {
                 await setDoc(doc(db, "users", auth.currentUser.uid), {
                     email,
-                    shoppingCart: []
+                    shoppingCart: [],
+                    isAdmin: false,
                 })
                 navigate("/")
             })
@@ -54,10 +55,10 @@ const Signup = () => {
     }
 
     return (
-        <main >
+        <div style={{ backgroundColor: '#b3e8ff', height: '98vh' }}>
             <Grid container justifyContent="center">
                 <Grid item xs={10} sm={8} md={6} lg={4} xl={3}>
-                    <Box border={1} padding={2} borderRadius={3} borderColor={"grey.500"} mx={"auto"} my={3}>
+                    <Box border={1} padding={2} borderRadius={3} borderColor={"grey.500"} mx={"auto"} my={3} sx={{ backgroundColor: '#ffffff' }}>
                         <Typography variant="body1" mb={2}>
                             <NavLink to="/" >
                                 &lt; Regresar
@@ -119,7 +120,7 @@ const Signup = () => {
                     </Box>
                 </Grid>
             </Grid>
-        </main>
+        </div>
     )
 }
 

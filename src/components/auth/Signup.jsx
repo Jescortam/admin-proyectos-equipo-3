@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 
-import { AuthContext } from "../Auth";
-import { auth, db } from '../firebase';
+import { AuthContext } from "../../Auth";
+import { auth, db } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { Box, Button, Divider, Grid, Paper, TextField, Typography } from '@mui/material';

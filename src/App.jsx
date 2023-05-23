@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import Home from './components/Home';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import Home from './components/menu/Home';
+import Signup from './components/auth/Signup';
+import Login from './components/auth/Login';
 import { Navigate, BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider, AuthContext } from "./Auth";
-import ShoppingCart from './components/ShoppingCart';
-import UserOrdersBody from './components/body/UserOrdersBody';
-import AdminOrdersBody from './components/body/AdminOrdersBody';
+import ShoppingCart from './components/shoppingCart/ShoppingCart';
+import UserOrdersBody from './components/userOrders/UserOrdersBody';
+import AdminOrdersBody from './components/adminOrders/AdminOrdersBody';
 
 function App() {
   const { currentUser, isAdmin } = useContext(AuthContext);

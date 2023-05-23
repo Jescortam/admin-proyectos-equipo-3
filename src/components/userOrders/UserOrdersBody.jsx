@@ -1,6 +1,6 @@
 import Header from "../header/Header"
-import Sidebar from "./Sidebar"
-import Body from "./Body"
+import Sidebar from "../body/Sidebar"
+import Body from "../body/Body"
 
 import UserOrderList from "./UserOrderList"
 import { Box } from "@mui/material";

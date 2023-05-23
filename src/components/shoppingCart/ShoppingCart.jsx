@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Header from './header/Header'
-import Sidebar from './body/Sidebar';
-import Body from './body/Body'
+import Header from '../header/Header'
+import Sidebar from '../body/Sidebar';
+import Body from '../body/Body'
 import { Box } from '@mui/system';
-import ShoppingCartBody from './body/ShoppingCartBody';
+import ShoppingCartBody from './ShoppingCartBody';
 
 const drawerWidth = 240;
 

@@ -26,8 +26,8 @@ export default function ItemList() {
     useEffect(() => {
         const productsCollectionRef = collection(db, "products");
         const getProducts = async () => {
-            const data = await getDocs(query(productsCollectionRef, where("category", "==", "Postres")));
-            // const data = await getDocs(query(productsCollectionRef));
+            // const data = await getDocs(query(productsCollectionRef, where("category", "==", "Postres")));
+            const data = await getDocs(query(productsCollectionRef));
             setProducts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         }
 
@@ -49,21 +49,18 @@ export default function ItemList() {
         })
         const renderedCategories = []
 
-        // CHANGE CATEGORIES TO CATEGORIES_KEYS
-        // categoriesKeys.forEach((categoryKey) => {
-        for (const [category, products] of Object.entries(categories)) {
+        categoriesKeys.forEach((categoryKey) => {
             renderedCategories.push(
-                <Box id={category} sx={{ marginBottom: 5 }}>
+                <Box id={categoryKey} sx={{ marginBottom: 5 }}>
                     <Typography variant="h4" fontWeight={800} gutterBottom>
-                        {category}
+                        {categoryKey}
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                        {/* {renderItems(categories[categoryKey])} */}
-                        {renderItems(products)}
+                        {renderItems(categories[categoryKey])}
                     </Box>
                 </Box>
             )
-        }
+        })
 
         return renderedCategories
     }

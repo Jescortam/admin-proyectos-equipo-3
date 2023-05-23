@@ -6,6 +6,7 @@ import ShoppingCartItems from './ShoppingCartItems';
 import { Alert, Box, Button, Typography } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 import { AuthContext } from '../../Auth';
+import { getDatabase, ref, set } from 'firebase/database';
 
 export default function ShoppingCartBody() {
     const [items, setItems] = useState([])
@@ -39,11 +40,13 @@ export default function ShoppingCartBody() {
     }, [])
 
     const createOrder = async () => {
-        await setDoc(doc(db, "orders", uuidv4()), {
+        const realtimeDatabase = getDatabase()
+        set(ref(realtimeDatabase, 'orders/' + uuidv4()), {
             userId: currentUser.uid,
             items,
-            creationDate: new Date(),
-            isOver: false
+            creationDate: Date.now(),
+            isOver: false,
+            aproxDateOfCompletion: null,
         })
 
         await updateDoc(doc(db, "users", currentUser.uid), {

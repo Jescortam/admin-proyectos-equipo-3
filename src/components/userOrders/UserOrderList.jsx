@@ -1,10 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../Auth"
 import { Box, Divider, Stack, Typography } from "@mui/material"
-import { collection, getDocs, query, where } from "firebase/firestore"
 import { useNavigate } from "react-router"
-import { db } from "../../firebase"
-import Order from "./Order"
+import Order from "./UserOrder"
+import { getDatabase, onValue, ref } from "firebase/database"
 
 export default function UserOrderList() {
     const [orders, setOrders] = useState([])
@@ -18,24 +17,24 @@ export default function UserOrderList() {
                 navigate('/')
             }
 
-            const q = query(collection(db, "orders"), where("userId", "==", currentUser.uid))
-            const querySnapshot = await getDocs(q)
+            const realtimeDatabase = getDatabase()
+            const ordersRef = ref(realtimeDatabase, 'orders/')
 
-            const newOrders = []
-            querySnapshot.forEach(doc => {
-                newOrders.push(doc.data())
+            onValue(ordersRef, snapshot => {
+                const data = snapshot.val()
+
+                const newOrders = Object.keys(data).map(key => data[key])
+                newOrders.sort((a, b) => b.creationDate - a.creationDate)
+
+                setOrders(newOrders)
             })
-
-            newOrders.sort((a, b) => b.creationDate - a.creationDate)
-
-            setOrders(newOrders)
         }
 
         getOrders()
     }, [])
 
     const renderRecentOrders = () => {
-        const recentOrders = orders.filter(order => (Date.now() - order.creationDate.seconds * 1000) < 86400000)
+        const recentOrders = orders.filter(order => (Date.now() - order.creationDate) < 86400000)
 
         return (
             <Box>
@@ -48,7 +47,7 @@ export default function UserOrderList() {
     }
 
     const renderPastOrders = () => {
-        const pastOrders = orders.filter(order => (Date.now() - order.creationDate.seconds * 1000) > 86400000)
+        const pastOrders = orders.filter(order => (Date.now() - order.creationDate) > 86400000)
 
         return (
             <Box>

@@ -87,6 +87,7 @@ export default function ItemCard(props) {
             </Typography>
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ height: 100 }}>
+            {id}
             {description}
           </Typography>
         </CardContent>

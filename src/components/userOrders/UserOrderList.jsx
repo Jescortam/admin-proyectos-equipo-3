@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../Auth"
-import { Box, Divider, Stack, Typography } from "@mui/material"
+import { Alert, Box, Divider, Stack, Typography } from "@mui/material"
 import { useNavigate } from "react-router"
 import Order from "./UserOrder"
 import { getDatabase, onValue, ref } from "firebase/database"
@@ -23,7 +23,7 @@ export default function UserOrderList() {
             onValue(ordersRef, snapshot => {
                 const data = snapshot.val()
 
-                const newOrders = Object.keys(data).map(key => data[key])
+                const newOrders = Object.keys(data).map(key => ({ id: key, ...data[key] }))
                 newOrders.sort((a, b) => b.creationDate - a.creationDate)
 
                 setOrders(newOrders)
@@ -38,8 +38,8 @@ export default function UserOrderList() {
 
         return (
             <Box>
-                {(recentOrders.length > 0) ? <Typography variant="h4" >Órdenes recientes</Typography> : <></>}
                 <Stack>
+                    {recentOrders.length === 0 ? <Alert severity="info" sx={{ mt: 2 }}>No existen órdenes recientes en este momento.</Alert> : <></>}
                     {recentOrders.map(order => <Order {...order} />)}
                 </Stack>
             </Box>
@@ -51,8 +51,8 @@ export default function UserOrderList() {
 
         return (
             <Box>
-                {(pastOrders.length > 0) ? <Typography variant="h4">Órdenes pasadas</Typography> : <></>}
                 <Stack>
+                    {pastOrders.length === 0 ? <Alert severity="info" sx={{ mt: 2 }}>No existen órdenes pasadas en este momento.</Alert> : <></>}
                     {pastOrders.map(order => <Order {...order} />)}
                 </Stack>
             </Box>
@@ -61,8 +61,10 @@ export default function UserOrderList() {
 
     return (
         <Box>
+            <Typography variant="h4" >Órdenes recientes</Typography>
             {renderRecentOrders()}
             <Divider sx={{ marginY: 5 }} />
+            <Typography variant="h4">Órdenes pasadas</Typography>
             {renderPastOrders()}
         </Box>
     )

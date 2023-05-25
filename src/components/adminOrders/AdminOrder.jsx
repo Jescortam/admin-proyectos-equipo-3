@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Typography, Stack, Box, Button } from '@mui/material';
+import { Card, CardContent, Typography, Stack, Box, Button, TextField } from '@mui/material';
 import { getDatabase, ref, set } from 'firebase/database';
 
 export default function AdminOrder(props) {
     const [order, setOrder] = useState(props)
+    const [minutesToCompletion, setMinutesToCompletion] = useState(null)
 
     const creationDate = new Date(order.creationDate)
+    const realtimeDatabase = getDatabase()
 
     const renderItemNames = (items) => {
         return (items.map(item => {
@@ -24,19 +26,57 @@ export default function AdminOrder(props) {
         ).toFixed(2)
     }
 
-    const markAsOver = () => {
-        const realtimeDatabase = getDatabase()
+    const renderTimeSetter = () => {
+        if (!order.isOver && (order.aproxDateOfCompletion === null || order.aproxDateOfCompletion === undefined)) {
+            return (
+                <TextField id="outlined-basic" label="Minutos para compleción" variant="outlined" type="number" sx={{ mx: 'auto' }}
+                    onChange={(e) => { setMinutesToCompletion(e.target.value) }} />
+            )
+        }
+    }
+
+    const renderButton = () => {
+        console.log(order)
+        if (order.isOver) {
+            return <></>
+        } if (order.aproxDateOfCompletion != null || order.aproxDateOfCompletion != undefined) {
+            return <Button sx={{ mt: 1 }} variant="contained" onClick={markAsOver}>Marcar como completado</Button>
+        } else {
+            return <Button sx={{ mt: 1 }} variant="contained" onClick={setTimeOfCompletion}>Establecer tiempo</Button>
+        }
+    }
+
+    const markAsOver = async () => {
         const changedOrder = { ...order }
         changedOrder.isOver = true
-        set(ref(realtimeDatabase, 'orders/' + order.id), changedOrder)
+        changedOrder.aproxDateOfCompletion = null
+        await set(ref(realtimeDatabase, 'orders/' + order.id), changedOrder)
         setOrder(changedOrder)
+        window.location.reload();
+    }
+
+    const setTimeOfCompletion = async () => {
+        if (minutesToCompletion !== null) {
+            const changedOrder = { ...order }
+            changedOrder.aproxDateOfCompletion = Date.now() + minutesToCompletion * 60000
+            await set(ref(realtimeDatabase, 'orders/' + order.id), changedOrder)
+            setOrder(changedOrder)
+        }
     }
 
     const getOrderStatus = () => {
         if (order.isOver) {
             return 'Listo'
         } else if (order.aproxDateOfCompletion != null) {
-            return order.aproxDateOfCompletion.toLocaleTimeString()
+            const timeOfCompletion = new Date(order.aproxDateOfCompletion)
+            let hours = timeOfCompletion.getHours()
+            let minutes = timeOfCompletion.getMinutes()
+            const ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12
+            hours = hours != 0 ? hours : 12
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            const timeString = hours + ':' + minutes + ' ' + ampm;
+            return timeString
         } else {
             return 'Por revisar'
         }
@@ -62,12 +102,15 @@ export default function AdminOrder(props) {
                     </Box>
                     <Box sx={{ marginTop: { xs: 4, md: 0 } }}>
                         <Typography variant="h6" fontWeight={400} sx={{ textAlign: { md: 'center' } }}>
-                            Estado de la orden
+                            {!order.isOver && order.aproxDateOfCompletion != null ? 'Hora aproximada de entrega' : 'Estado de la orden'}
                         </Typography>
                         <Typography variant="h5" sx={{ textAlign: { md: 'center' } }} fontWeight={800}>
                             {getOrderStatus()}
                         </Typography>
-                        <Button sx={{ my: 1 }} variant="contained" onClick={markAsOver}>Marcar como completado</Button>
+                        <Box mt={2} display='flex' flexDirection={'column'} sx={{ alignItems: { md: 'center' } }}>
+                            <Box>{renderTimeSetter()}</Box>
+                            <Box>{renderButton()}</Box>
+                        </Box>
                     </Box>
                 </Box>
                 <Typography variant="body1" mt={2} fontWeight={600}>

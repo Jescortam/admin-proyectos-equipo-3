@@ -48,7 +48,7 @@ const Login = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#b3e8ff', height: '98vh' }}>
+        <div style={{ backgroundColor: '#b3e8ff', height: '100vh' }}>
             <Grid container justifyContent="center">
                 <Grid item xs={10} sm={8} md={6} lg={4} xl={3}>
                     <Box border={1} padding={2} borderRadius={3} borderColor={"grey.500"} mx={"auto"} my={3} sx={{ backgroundColor: '#ffffff' }}>

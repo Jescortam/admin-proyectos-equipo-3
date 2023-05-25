@@ -26,7 +26,15 @@ export default function UserOrder(props) {
         if (isOver) {
             return 'Listo'
         } else if (aproxDateOfCompletion != null) {
-            return aproxDateOfCompletion.toLocaleTimeString()
+            const timeOfCompletion = new Date(aproxDateOfCompletion)
+            let hours = timeOfCompletion.getHours()
+            let minutes = timeOfCompletion.getMinutes()
+            const ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12
+            hours = hours != 0 ? hours : 12
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            const timeString = hours + ':' + minutes + ' ' + ampm;
+            return timeString
         } else {
             return 'Por revisar'
         }
@@ -52,7 +60,7 @@ export default function UserOrder(props) {
                     </Box>
                     <Box sx={{ marginTop: { xs: 4, md: 0 } }}>
                         <Typography variant="h6" fontWeight={400}>
-                            Estado de la orden
+                            {!isOver && aproxDateOfCompletion != null ? 'Hora aproximada de entrega' : 'Estado de la orden'}
                         </Typography>
                         <Typography variant="h5" sx={{ textAlign: { md: 'center' } }} fontWeight={800}>
                             {getOrderStatus()}

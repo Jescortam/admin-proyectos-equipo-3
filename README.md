@@ -1,4 +1,8 @@
 # Mama Poule
+Mama Poule es una página web que tiene como objetivo servir como menú para un restaurante de desayunos y café, donde
+el cliente sea capaz de tener una imagen visual y escrita de cada producto en existencia y que,
+asimismo, sea útil para hacer pedidos a lejanía para su consumo en el local.
+
 ## Pantallas:
 
 ### Menú
